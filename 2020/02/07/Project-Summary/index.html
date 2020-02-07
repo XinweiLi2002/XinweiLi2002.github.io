@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Project Summary | Xinwei Li&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Xinwei Li">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.0.0',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: '-'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "endless-river",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300|Noto+Serif+SC&amp;display=swap">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/person_1.jpg"></a></div>
+    <span>2020-02-07</span>
+    <h2>Project Summ...</h2>
+    
+    </div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h3 id="Breast-Cancer-Diagnosis-Prediction"><a href="#Breast-Cancer-Diagnosis-Prediction" class="headerlink" title="Breast Cancer Diagnosis Prediction"></a><center>Breast Cancer Diagnosis Prediction</center></h3><p>My research is about breast cancer diagnosis prediction. To determine whether the tumor are benign or not, we did supervised classification.<br><br><br>The data we use are from a digitized image of a fine needle aspirate (FNA) of a breast mass, where we have 357 benign samples and 212 malignant samples, resulting in 30 features. By analyzing the features from each person, we could determine whether a person suffers cancer or not. The result of accurate diagnosis paves the way for further treatment and remedy.<br><br><br>We would predict the cancer with features of radius, smoothness,compactness, concavity, etc. To analyze the data better, we would handle the dataset through KNN model or Logistic Regression model. Comparing the results of each model, we would select the most accurate one as the model we used in the further study.<br><br><br>When we use datasets or figures first, we would do data preprocessing. Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. What we should do first is to check out the percentage of empty data and ineffective value in the dataset. By the way, we would determine the type of data, classification or continuous values. If missing a lot, we will reconsider the significance of the data group and may ignore the data as a useless one. If only about 10% of values get missing, we would fill the blank by copying the data from the next line. Otherwise, the analysis of the misleading data would impact the overall trends of the whole dataset and thus decrease the accuracy.<br><br><br>To better understand the dataset, we could explore and visualize the data, which could roughly select features and provide a clear explanation. Data exploration and visualization could show the range of data including its maximum and minimum data, and whether or not it conforms to the normal distribution.<br><br><br>There are four sorts of figures we usually use:<br><br><br><img src="/2020/02/07/Project-Summary/1.png" alt="1"></p>
+<p>Histogram：determine whether the sets of data results are in balance. In this graph, there is a great difference between number of benign and malignant. Therefore, in further study, we would select 50 samples for each to keep the balance.<br><br><br><img src="/2020/02/07/Project-Summary/2.png" alt="2"><br><br></p>
+<p>Violin plot: determine the significance of data group. The more different the data mean between benign and malignant groups, the closer the aspects relate to the final result. From the figure, the concave point, area, concavity, and radius are more responsible for cancer determination than smoothness, symmetry, and texture are.<br><br><br><img src="/2020/02/07/Project-Summary/3.png" alt="3"><br><br><br>Line chart: show the distribution of benign and malignant tumor,which contains more details than those in violin plot. For instance, we could see the benign tumor focusing on 11 to 13 and malignant tumor focusing on 15 to 20.<br><br><br><img src="/2020/02/07/Project-Summary/4.png" alt="4"><br><br><br>Linear fitting: select two aspects and see whether they greatly overlaps, or positive correlation. If so, we would only select one of them into the further research and ignore the other one. In this graph, as concave and concavity positively correlates, we could only use one of them in further study.<br><br><br>We sometimes compare different kinds of methods to deal with data. As for violin plot and RFECV, the former one could report characteristics that have great differences, and the later one could select characteristics that exert greater impact on final results. We could compare the aspects chosen by each model and select the overlapped ones.<br><br><br>Since the computer cannot recognize all sorts of data, we need to engineer the features by using domain knowledge of the data to create or modify features to make machine-learning algorithms work.<br><br><br>To allow computer analyze data better, we utilize encoding and normalization. (Encoding: Because the computers cannot direct identify character string, we encode character strings. Normalization: Because we would calculate the distance in KNN later, we have to make all data follow a same distribution. Standard scaler is to standardize features by removing the mean and scaling to unit variance.)<br><br><br>Having been scaled, the range and mean became different. Without standard scaler, the calculation would be wrong and thus lower the precise.<br><br><br>We insert model of logistic regression to process RFECV. By deleting a set of data one by one, we could see how the result changed. The more it changes, the more significant role the certain sets of data play in the research. The features selected by RFECV are radius, concave, area, etc.<br><br><br>There are a lot of default parameters in the models. Generally, default parameters are optimized. If we do not have suitable values, default parameters are the best choices for us, which could help avoid mistakes. However, when we always rely on default parameters, we may miss the most optimal results.<br><br><br>Logistic regression is to do classification via exploring the risk factors of a disease, thus predicting the probability of occurrence of a disease according to the risk factors. KNN is to classify features by the distance between two dots in the figure. The k-nearest neighbors algorithm (kNN) is a method used for classification. The input consists of the closest training examples in the feature space; the output is a class. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors. Decision tree is to classify by answering yes or no in is a flowchart-like structure. Each internal node represents a “test” on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label. The paths from root to leaf represent classification rules.<br><br><br>After each model, we use confusion matrix to score the model via comparing classification results and actual measurements. By comparing the scores we would choose the more accurate model.<br><br><br>As the whole, firstly, we use the train data to build logistic regression, KNN model, and decision tree. Secondly, we replace the test data, the results in which could help us check the accuracy. Then, by optimizing the parameters and comparing new results, we could find the most accurate and suitable parameters. Finally, we would select the perfect one for the model.<br><br><br>In my research, in the “weigh” parameters, we substitute the “uniform” with “distance”, increasing the score from 0.9283 to 0.9736. Thus, we optimize the model and make the results more precise.<br><br><br>In this project, I use decision tree to predict breast cancer diagnosis. I propose the feature of the model with data normalization and encoding. I select the features. I test several machine learning models by comparing accuracy. Finally I used logistic regression, KNN model, and decision tree to do the prediction. The score of the model is 0.9736, which further improves the results.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>No more new</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+
+					<div>
+						<span>Prev</span>
+						<h3>No more early</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Xinwei Li's blog</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+
+<button class="menu-trigger"></button>
+<div class="menu">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/person_1.jpg" alt="Xinwei Li"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>Xinwei Li</p>
+          <span class="tagline">Xinwei Li</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+        <ul>
+          <li><a href="/about">About</a></li>
+        </ul>
+    </li>
+    
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
